@@ -1,0 +1,99 @@
+﻿@model ArtistProductViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+<body>
+    <div class="text-center">
+        <!--<h1 class="display-4">ArtWebShop</h1>-->
+        <!-- FIND ART MENU -->
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                BROWSE
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- INDEX CAROUSEL(Top sellers) -->
+        <div id="carouselTopSellers" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselTopSellers" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselTopSellers" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselTopSellers" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active img-fluid" data-bs-interval="10000">
+                    <img src="https://www.lamlisse.nl/wp-content/uploads/2020/11/Bob-Ross-Reflections-S2E8-1983-Collectie-Bob-Ross-Inc.%C2%A9-Bob-Ross-Inc-.-e1605278470472.jpg" class="imgTopSeller1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="TopSeller1">Fetch artist</h5>
+                        <p class="TopSellerCap1">Fetch short description</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F140020501%2F38059591182%2F1%2Foriginal.20210628-032143?h=200&w=450&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C167%2C1226%2C613&s=7c2394dbc2ac2c6fbf3487a850a44670" class="imgTopSeller2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="TopSeller2">Fetch artist</h5>
+                        <p class="TopSellerCap2">Fetch short description</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img-lumas-avensogmbh1.netdna-ssl.com/showimg_ime53_mobile.jpg" class="imgTopSeller3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="TopSeller3">Fetch artist</h5>
+                        <p class="TopSellerCap3">Fetch short description</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTopSellers" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTopSellers" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in Model.Product)
+        {   <div class="col-sm mb-4">
+                <div>@item.PictureLink</div>
+                <img src="@item.PictureLink" width="330" height="330" />
+                <div>Artist:&nbsp;&nbsp;&nbsp;&nbsp; @item.Artist.ArtistName</div>
+                <div>Description: @item.ShortDescription </div>
+                <div>Saldo: @item.Stock st </div>
+            </div>
+        }
+        <img src="@Model.Product.FirstOrDefault().PictureLink">
+        @Model.Product.FirstOrDefault().PictureLink
+    </div>
+</body>
+</html>

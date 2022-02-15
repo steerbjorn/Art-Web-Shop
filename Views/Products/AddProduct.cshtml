@@ -1,0 +1,90 @@
+﻿@using ArtWebshop.Data
+@inject ProductDbContext appContext
+
+@model ArtWebshop.Models.Product
+
+@{
+    ViewData["Title"] = "CreateProduct";
+}
+
+<h1>Upload Art</h1>
+
+<br />
+
+    <div class="col-md-5">
+        <form asp-action="AddProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Width" class="control-label"></label>
+                <input asp-for="Width" class="form-control" />
+                <span asp-validation-for="Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Height" class="control-label"></label>
+                <input asp-for="Height" class="form-control" />
+                <span asp-validation-for="Height" class="text-danger"></span>
+            </div>
+
+
+        <!--USER IMAGE UPLOAD-->
+        
+        <div class="form-group" id="pShortDescription">
+            <label asp-for="ShortDescription" class="control-label"></label>
+            <input asp-for="ShortDescription" class="form-control" />
+            <span asp-validation-for="ShortDescription" class="text-danger"></span>
+        </div>
+        <div class="form-group" id="pLongDescription">
+            <label asp-for="LongDescription" class="control-label"></label>
+            <input asp-for="LongDescription" class="form-control" />
+            <span asp-validation-for="LongDescription" class="text-danger"></span>
+        </div>
+
+        <select asp-for="Category">
+            <option value="">Choose category</option>
+            <option value="Painting">Painting</option>
+            <option value="Print">Print</option>
+            <option value="Photography">Photography</option>
+        </select>
+        <select asp-for="Style">
+            <option value="">Choose style</option>
+            <option value="Abstract">Abstract</option>
+            <option value="Realism">Realism</option>
+            <option value="Pop Art">Pop Art</option>
+        </select>
+        <div>
+            <label asp-for="CreationDate" class="control-label"></label>
+            <input asp-for="CreationDate" class="form-control" />
+            <span asp-validation-for="CreationDate" class="text-danger"></span>
+        </div>
+        <br />
+        <div>
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Stock" class="control-label"></label>
+            <input asp-for="Stock" class="form-control" />
+            <span asp-validation-for="Stock" class="text-danger"></span>
+        </div>
+        <hr />
+        <div class="form-group">
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </div>
+        </form>
+    </div>
+<div>
+    <a asp-action="Index">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

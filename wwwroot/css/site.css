@@ -1,0 +1,149 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/*footer
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+ */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: #8e9eab;
+    background: -webkit-linear-gradient(120deg, #eef2f3, #8e9eab);
+    background: linear-gradient(120deg, #eef2f3, #8e9eab);
+    min-height: 100vh
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/*BROWSE ART MENU*/
+.megamenu {
+    position: static
+}
+
+    .megamenu .dropdown-menu {
+        background: none;
+        border: none;
+        width: 100%
+    }
+
+
+code {
+    color: #745eb1;
+    background: #fff;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem
+}
+
+.text-uppercase {
+    letter-spacing: 0.08em
+}
+
+/*INDEX CAROUSEL*/
+
+#carouselTopSellers {
+    top: 200px;
+    margin: 0;
+}
+
+.carousel-indicators {
+    top: 370px;
+    /*justify-content: flex-start;*/
+    margin: 0;
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: black;
+    height: 100px;
+    width: 100px;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 6px solid black;
+    background-image: none;
+}
+
+.TopSeller1, .TopSeller2, .TopSeller3 {
+    position: relative;
+    top: 30px;
+    color: white;
+    text-shadow: -2px -2px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+}
+
+.TopSellerCap1, .TopSellerCap2, .TopSellerCap3 {
+    position: relative;
+    top: 25px;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+.imgTopSeller1, .imgTopSeller2, .imgTopSeller3 {
+    border-radius: 15px;
+    width: 75%;
+    height: 360px;
+}
+
+/*Artist Product Upload*/
+#pShortDescription {
+    /*height: 200px;*/
+}

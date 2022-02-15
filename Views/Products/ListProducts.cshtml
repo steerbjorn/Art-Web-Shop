@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Product>
+<div class="d-flex justify-content-center" id="container">
+    <div class="wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <h3>Paintings:</h3>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var painting in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-controller="" asp-action="" 
+                               asp-route-courseId="@painting.ProductId">@painting.Title</a>
+                        </td>
+                        <td>
+                            <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-productId="@painting.ProductId">Add to cart</a>
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td>
+                        <a asp-controller="Course" asp-action="AddCourse">+Add course</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
